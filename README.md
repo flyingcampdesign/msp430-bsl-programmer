@@ -1,6 +1,8 @@
 MSP430 BSL Programmer
 =====================
 
+http://www.flyingcampdesign.com/msp430-bsl-programmer.html
+
 FCD-PRG01
 ---------
 
