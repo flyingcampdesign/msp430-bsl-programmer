@@ -45,7 +45,7 @@
 
 \pagestyle{fancy}
 \lfoot{\fcdurl}
-\cfoot{\PIDNOLINK\ Datasheet -- Rev. C}
+\cfoot{\PIDNOLINK\ Datasheet -- Rev. D}
 
 \usepackage[pdftex,
             colorlinks=true,
@@ -304,9 +304,8 @@ The following example clears all flash memory, programs the target with the Inte
     msp430-bsl-fcdprog.py -p /dev/path-to-msp430-bsl-programmer -r -e path/to/firmware.hex
 \end{verbatim}
 
-\subsection*{MSP430 BSL Utility (no longer under development)}
-The \fcd\ MSP430 BSL Utility is a Windows GUI utility which was designed to be fully compatible with the \PID. More information about using the \PID\ with this software is available on the MSP430 BSL Utility product page: \newline
-\fcdbslutility
+\subsection*{MSP430 BSL Utility (no longer under active development)}
+The \fcd\ MSP430 BSL Utility is an open source GUI utility which was designed to be fully compatible with the \PID. Open source code can be obtained from: \githuburl \newline More information about using the \PID\ with this software is available on the MSP430 BSL Utility product page: \fcdbslutility
 
 \newpage
 
@@ -317,16 +316,20 @@ Contact \fcdsupportemail\ or visit \fcdsupporturl
 
 \section*{Revision History}
 \label{tab:revision-history}
-\begin{tabularx}{\textwidth}{|c|X|}
+\begin{tabularx}{\textwidth}{|c|c|X|}
   \hline
   Revision &
+  Date &
   Summary \\
   \hline
-  C & - Add MSP430 Device Support page \newline %
-      - Add Revision History page \newline %
-      - Add SLAU319 software section \newline %
-      - Update links to \pmt \newline %
-      - Add note saying MSP430 BSL Utility is no longer under active development \\
+  C & 12/09/2012 & - Add MSP430 Device Support page \newline %
+                   - Add Revision History page \newline %
+                   - Add SLAU319 software section \newline %
+                   - Update links to \pmt \newline %
+                   - Add note saying MSP430 BSL Utility is no longer under active development \\
+  \hline
+  D & 12/11/2012 & - Add date column to Revision History table \newline %
+                   - Update MSP430 BSL Utility description and add link to Github page \\
   \hline
 \end{tabularx}
 
