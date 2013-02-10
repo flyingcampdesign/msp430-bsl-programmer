@@ -45,7 +45,7 @@
 
 \pagestyle{fancy}
 \lfoot{\fcdurl}
-\cfoot{\PIDNOLINK\ Datasheet -- Rev. D}
+\cfoot{\PIDNOLINK\ Datasheet -- Rev. E}
 
 \usepackage[pdftex,
             colorlinks=true,
@@ -261,7 +261,7 @@
 
 \section*{MSP430 Device Family Support}
 \begin{flushleft}
-    Any MSP430 device family that is supported by the example hardware described in \SLAUPDF\ section 4.1 "Hardware Description" should also be compatible with the \PID.  The following table provides information about MSP430 device families that are not compatible with the \PID\ hardware.
+    Any MSP430 device family that is supported by the example hardware described in \SLAUPDF\ section 4.1 "Hardware Description" should also be compatible with the \PID.  The following table provides information about MSP430 device families that may not be compatible with the \PID\ hardware.
 \end{flushleft}
 \label{tab:msp430-device-support}
 \begin{tabularx}{\textwidth}{|c|X|}
@@ -269,7 +269,7 @@
   Device Family &
   Summary \\
   \hline
-  MSP430F543xA & \PID\ is incompatible with MSP430F543xA family devices.  There is a bug in the MSP430F543xA family which requires that the second low pulse on TEST must be shorter than 15us, which the VCP drivers for the \PID\ are unable to achieve. Please reference SYS10 in \href{http://www.ti.com/litv/pdf/slaz290b}{http://www.ti.com/litv/pdf/slaz290b} for more details.\\
+  MSP430F543xA & \PID\ is incompatible with MSP430F543xA pre-Rev H silicon devices.  There is a bug in MSP430F543xA pre-Rev H devices which requires that the second low pulse on TEST must be shorter than 15us, which the VCP drivers for the \PID\ are unable to achieve. Please reference SYS10 in \href{http://www.ti.com/lit/pdf/slaz290}{http://www.ti.com/lit/pdf/slaz290} for more details.  TI has confirmed that this bug has been fixed in Rev H silicon and later.\\
   \hline
 \end{tabularx}
 
@@ -288,7 +288,7 @@ More information about the \tos\ toolchain is available online at: \tosurl
 \end{flushleft}
 
 \subsection*{\SLAUNOLINK}
-The TI support files\footnote{\SLAUZIPURL} for \SLAUPDF\ include a command line demo utility for communication with 1/2/4xx BSLs.  This utility is called "BSLDEMO2.exe" and is designed to work with the example hardware described in \SLAUPDF\ section 4.1 "Hardware Description".  The \PID\ mimics this hardware by providing a VCP interface to the BSL control software.  However, the \PID\ does not include inverting buffers on RST and TCK as shown in the TI reference hardware.  Furthermore, the \PIDCBL\ swaps the RST and TCK pins (with respect to the virtual COM port RTS and DTR pins).  Therefore, the BSLDEMO2.exe utility source code provided by TI must be patched and recompiled to work correctly with the \PID\ + \PIDCBL\ combination.  A patched version of BSLDEMO2.exe can be downloaded from \PIDURL\ while the source can be obtained from \githuburl.  The following example programs the target with the TI-TXT firmware file ``firmware.txt'':
+The TI support files\footnote{\SLAUZIPURL} for \SLAUPDF\ include a command line demo utility for communication with 1/2/4xx BSLs.  This utility is called "BSLDEMO2.exe" and is designed to work with the example hardware described in \SLAUPDF\ section 4.1 "Hardware Description".  The \PID\ mimics this hardware by providing a VCP interface to the BSL control software.  However, the \PID\ does not include inverting buffers on RST and TCK as shown in the TI reference hardware.  Furthermore, the \PIDCBL\ swaps the RST and TCK pins (with respect to the virtual COM port RTS and DTR pins).  Therefore, the BSLDEMO2.exe utility source code provided by TI must be patched and recompiled to work correctly with the \PID\ + \PIDCBL\ combination.  A patched version of BSLDEMO2.exe can be downloaded from \PIDURL\ while the patched source code can be obtained from \githuburl.  The following example programs the target with the TI-TXT firmware file ``firmware.txt'':
 \begin{verbatim}
     BSLDEMO2.exe -s2 -cCOMx firmware.txt
 \end{verbatim}
@@ -330,6 +330,9 @@ Contact \fcdsupportemail\ or visit \fcdsupporturl
   \hline
   D & 12/11/2012 & - Add date column to Revision History table \newline %
                    - Update MSP430 BSL Utility description and add link to Github page \\
+  \hline
+  E & 02/09/2013 & - Update MSP430 Device Support page regarding MSP430F543xA SYS10 BSL fix  \newline %
+                   - Fix revision-hard-coded link to a TI errata sheet \\
   \hline
 \end{tabularx}
 
