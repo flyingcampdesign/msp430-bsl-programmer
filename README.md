@@ -1,9 +1,5 @@
-View this project on [CADLAB.io](https://cadlab.io/project/1186). 
-
 MSP430 BSL Programmer
 =====================
-
-http://www.flyingcampdesign.com/msp430-bsl-programmer.html
 
 FCD-PRG01
 ---------
